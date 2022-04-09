@@ -2,7 +2,7 @@ project "imGui"
     kind "staticLib"
     language "C++"
 
-    targetdir ("bin/" .. outputdir .. "%{prj.name}"
+    targetdir ("bin/" .. outputdir .. "%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     files
@@ -11,7 +11,7 @@ project "imGui"
         "imgui.h",
         "imgui.cpp",
         "imgui_draw.cpp",
-        "imgui_internal.cpp",
+        "imgui_internal.h",
         "imgui_widgets.cpp",
         "imstb_rectpack.h",
         "imstb_textedit.h",
@@ -24,5 +24,5 @@ project "imGui"
         cppdialect "C++17"
         staticruntime "On"
 
-    filter {"sytem:windows", "configuration:Release" }
+    filter {"system:windows", "configurations:Release" }
         buildoptions "/MT"
